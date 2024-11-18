@@ -1,7 +1,7 @@
-# Lesozavod-website-django
+# Lesozavod-website-django 🐍
 Web application created in Python using the Django framework
 
-## Instructions on how to connect to the "Rock-Paper-Scissors" game
+## Instructions for connecting to the site "Lesozavod №10 Belka"
 
 | Download the repository |
 
