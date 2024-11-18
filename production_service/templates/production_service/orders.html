@@ -1,0 +1,61 @@
+{% extends "services/base.html" %}
+
+{% block title %} Заказы {% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+{% if user.profile.get_role_display == "Сотрудник коммерческой службы" or user.profile.get_role_display == "Сотрудник службы производства" %}
+<div>
+    <ul>
+        <a class="nav-link" style="color: rgb(10, 160, 10); font-size: 27px; margin-left: 120px;" href="{% url 'production_service:register_order' %}">
+        <img style="margin-left: 50px;" src="//studybay.com/assets/marketing/blog/what-is-practical-work/yes.png"
+            width="44" height="44" alt="Добавить заказ" title="Добавить заказ"> Добавить заказ</a>
+    </ul>
+</div>
+
+<div class="container_body">
+    <ul>
+        <img style="margin: -40px 220px -100px 0px;" src="//th.bing.com/th/id/OIP.c1o4ipyD9r_cynsZ_Ff-VAHaHu?rs=1&pid=ImgDetMain"
+            width="40" height="40" alt="информация" title="информация">
+        <a class="nav-link" style="color: rgba(32, 116, 185, 0.856); font-size: 23px; margin-left: 50px;">Вам доступна информация о заказах клиентов</a>
+    </ul>
+    <h1 class="text-center">Заказы клиентов</h1>
+    <table border="1" cellpadding="10" cellspacing="0" style="width: 100%">
+        <thead>
+            <tr>
+                <th style="border: 1px solid black;">Номер заказа</th>
+                <th style="border: 1px solid black;">Дата регистрации заказа</th>
+                <th style="border: 1px solid black;">Дата окончания</th>
+                <th style="border: 1px solid black;">Клиент</th>
+                <th style="border: 1px solid black;">Вид лесопродукции</th>
+                <th style="border: 1px solid black;">Количество</th>
+                <th style="border: 1px solid black;">Комментарий</th>
+                <th style="border: 1px solid black;">Статус заказа</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for orders in order %}
+        <tr>
+            <td style="border: 1px solid black;">{{ orders.id }}</td>
+            <td style="border: 1px solid black;">{{ orders.registration_date }}</td>
+            <td style="border: 1px solid black;">{{ orders.deadline_date }}</td>
+            <td style="border: 1px solid black;">{{ orders.info_client }}</td>
+            <td style="border: 1px solid black;">{{ orders.product }}</td>
+            <td style="border: 1px solid black;">{{ orders.product_quantity }} шт.</td>
+            <td style="border: 1px solid black;">{{ orders.extra_info }}</td>
+            <td class="order-status-{{ orders.status|lower }}" style="border: 1px solid black;">{{ orders.get_status_display }}</td>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% else %}
+    <div class="container_body">
+        <h1 class="text-center text-danger">Доступ закрыт</h1>
+        <p style="font-size: 20px;">У Вас нет прав доступа к <u>информации о заказах клиентов</u>, т.к. Вы не являетесь сотрудником этого предприятия</p>
+    </div>
+{% endif %}
+
+{% endblock %}

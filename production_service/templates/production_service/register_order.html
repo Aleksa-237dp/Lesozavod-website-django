@@ -1,0 +1,29 @@
+{% extends "services/base.html" %}
+
+{% block title %} Регистрация заказа {% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+{% if user.profile.get_role_display == "Сотрудник коммерческой службы" or user.profile.get_role_display == "Сотрудник службы производства" or user.profile.get_role_display == "Клиент" %}
+
+<div class="container_body" style="width: auto; height: auto;">
+    <h2>Заказ на лесопродукцию</h2>
+    <hr>
+    <form class="text-center" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <hr>
+        <button type="submit" class="btn btn-primary" href={% url "production_service:orders" %}>Отправить</button>
+    </form>
+</div>
+
+{% else %}
+    <div class="container_body">
+        <h1 class="text-center text-danger">Доступ закрыт</h1>
+        <p style="font-size: 20px;">У Вас нет прав доступа к <u>информации о заказах клиентов</u>, т.к. Вы не являетесь сотрудником этого предприятия</p>
+    </div>
+{% endif %}
+
+{% endblock %}
