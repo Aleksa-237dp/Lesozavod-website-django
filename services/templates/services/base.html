@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href='//cdn-icons-png.freepik.com/512/186/186474.png'>
+    <title>{% block title %}Блочная верстка в HTML5{% endblock %}</title>
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <style>
+      body {
+          background-image: url("//images.wallpaperscraft.ru/image/single/les_tuman_vid_sverhu_129318_3840x2160.jpg");
+          background-size: cover;
+          background-attachment: fixed;
+          font-family: sans-serif;
+          overflow-x: hidden;
+          margin: 0;
+      }
+
+      .container_body {
+          background-color: rgba(255, 255, 255, 0.8);
+          padding: 20px;
+          border-radius: 10px;
+          max-width: 1000px;
+          margin: 50px auto;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .status-container {
+          display: flex;
+          justify-content: space-around;
+          margin: 20px;
+      }
+
+      .status {
+          text-align: center;
+          padding: 20px;
+          border-radius: 5px;
+          color: white;
+          font-weight: bold;
+          width: 100px;
+      }
+
+      .text-warning {
+          background-color: orange;
+      }
+
+      .text-primary { 
+          background-color: yellow;
+      }
+
+      .text-success {
+          background-color: green;
+      }
+
+      .form-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+            place-items: center;
+        }
+
+        .order-status-draft {
+            background-color: None;
+        }
+
+        .order-status-approved {
+            background-color: rgb(231, 157, 20); 
+        }
+
+        .order-status-in_production {
+            background-color: rgb(223, 223, 33); 
+        }
+
+        .order-status-completed {
+            background-color: rgb(34, 155, 34); 
+        }
+
+        .order-status {
+            padding: 5px;
+            color: white; 
+            border-radius: 3px;
+        }
+
+        #main {
+          background-color: #f2f2f2;
+          padding: 20px;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          border-radius: 4px;
+          border-bottom: 4px solid #ddd;
+        }
+
+        #real-estates-detail #author img {
+          -webkit-border-radius: 100%;
+          -moz-border-radius: 100%;
+          -ms-border-radius: 100%;
+          -o-border-radius: 100%;
+          border-radius: 100%;
+          border: 5px solid #ecf0f1;
+          margin-bottom: 10px;
+        }
+
+        #real-estates-detail .sosmed-author i.fa {
+          width: 30px;
+          height: 30px;
+          border: 2px solid #bdc3c7;
+          color: #bdc3c7;
+          padding-top: 6px;
+          margin-top: 10px;
+        }
+
+        .panel-default .panel-heading {
+          background-color: #fff;
+        }
+
+        #real-estates-detail .slides li img {
+          height: 450px;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #666;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bg-dark text-white">
+          <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+    
+              <ul class="nav col-12 col-lg-auto my-1 justify-content-center my-md-2 px-2 text-small">
+                <li>
+                  <a href={% url "services:index" %} class="nav-link text-white">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="14"><use xlink:href={% url "services:index" %}></use></svg>
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  <a href={% url "technologist_service:products" %} class="nav-link text-white">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="14"><use xlink:href={% url "technologist_service:products" %}></use></svg>
+                    Лесопродукция
+                  </a>
+                </li>
+                <li>
+                  <a href={% url "commercial_service:clients" %} class="nav-link text-white">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="14"><use xlink:href={% url "commercial_service:clients" %}></use></svg>
+                    Клиенты
+                  </a>
+                </li>
+                <li>
+                  <a href={% url "production_service:orders" %} class="nav-link text-white">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="14"><use xlink:href={% url "production_service:orders" %}></use></svg>
+                    Заказы
+                  </a>
+                </li>
+                <li>
+                  <a href={% url "commercial_service:commercial" %} class="nav-link text-white">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="14"><use xlink:href={% url "commercial_service:commercial" %}></use></svg>
+                    Коммерческая служба
+                  </a>
+                </li>
+                <li>
+                  <a href={% url "production_service:production" %} class="nav-link text-white">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="14"><use xlink:href={% url "production_service:production" %}></use></svg>
+                    Служба производства
+                  </a>
+                </li>
+                <li>
+                  <a href={% url "technologist_service:technologist" %} class="nav-link text-white">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="14"><use xlink:href={% url "technologist_service:technologist" %}></use></svg>
+                    Служба технолога
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="px-3 py-2 border-bottom mb-3">
+          <div class="container d-flex flex-wrap justify-content-center">
+            <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
+              <input type="search" class="form-control" placeholder="Поиск..." aria-label="Search">
+            </form>
+            <div class="px-3 py-2 border-bottom mb-3">
+              <div class="container d-flex flex-wrap justify-content-center">
+                  {% if user.username %}
+          <form method="post" action={% url "registration:logout" %}>
+              {% csrf_token %}
+              <div class="dropdown text-end">
+                  <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                      style="margin-right: 30px; margin-top: -5px; font-family: Calibri; background-color: rgb(255, 255, 255); border: 1px solid #969696; padding:  7px; font-size: 19px; border-radius: 7px;"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      {{user.username}}
+                  </a>
+                  <ul class="dropdown-menu text-small" _msthidden="4">
+                      <li _msthidden="1"><a class="dropdown-item" href={% url "registration:profile" %} _msttexthash="191724"
+                              _msthidden="1" _msthash="43">Профиль</a></li>
+                          <hr class="dropdown-divider">
+                      </li>
+                      <li _msthidden="1"><button class="dropdown-item" type="submit" _msttexthash="98553" _msthidden="1"
+                              _msthash="46">Выйти</button>
+                      </li>
+                  </ul>
+              </div>
+              {% else %}
+              <div class="text-end">
+                  <button type="button" class="btn btn-light text-dark me-2">
+                      <a class="nav-link" href="{% url 'registration:login' %}">Логин</a>
+                  </button>
+                  <button type="button" class="btn btn-dark me-2">
+                       <a class="nav-link" href="{% url 'registration:register' %}">Регистрация</a>
+                  </button>
+              </div>
+              {% endif %}
+          </form>
+          </div>
+        </div>
+      </header>
+      {% block content %}
+      {% endblock %}
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <p class="col-md-4 mb-0 text-white">© 2024 Сервис</p>
+      
+          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+      
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href={% url "services:index" %} class="nav-link px-2 text-white">Главная</a></li>
+            <li class="nav-item"><a href={% url "technologist_service:products" %} class="nav-link px-2 text-white">Лесопродукция</a></li>
+            <li class="nav-item"><a href={% url "commercial_service:clients" %} class="nav-link px-2 text-white">Клиенты</a></li>
+            <li class="nav-item"><a href={% url "production_service:orders" %} class="nav-link px-2 text-white">Заказы</a></li>
+            <li class="nav-item"><a href={% url "commercial_service:commercial" %} class="nav-link px-2 text-white">Коммерческая служба</a></li>
+            <li class="nav-item"><a href={% url "production_service:production" %} class="nav-link px-2 text-white">Служба производства</a></li>
+            <li class="nav-item"><a href={% url "technologist_service:technologist" %} class="nav-link px-2 text-white">Служба технолога</a></li>
+          </ul>
+        </footer>
+      </div>
+</body>
+</html>

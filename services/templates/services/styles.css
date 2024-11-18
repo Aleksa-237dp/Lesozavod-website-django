@@ -1,0 +1,50 @@
+body {
+    background-image: url('//images.wallpaperscraft.ru/image/single/les_tuman_vid_sverhu_129318_3840x2160.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.container_body {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 50px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.status {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    width: 100px;
+}
+
+.status.orange {
+    background-color: orange;
+}
+
+.status.yellow {
+    background-color: yellow;
+}
+
+.status.green {
+    background-color: green;
+}
+
+.form-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+  }
