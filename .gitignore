@@ -1,5 +1,4 @@
 __pycache__/
 .venv
 db.db
-settings.py
 migrations/*.pyc
