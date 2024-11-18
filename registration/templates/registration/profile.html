@@ -1,0 +1,65 @@
+{% extends "services/base.html" %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div id="main">
+        <div class="row" id="real-estates-detail" style="display: flex;">
+            <div class="col-lg-3 col-md-4 col-19" style="display: flex; flex-direction: column; align-items: center;">
+                <div class="panel panel-default text-center" style="width: 100%;">
+                    <div class="panel-heading" style="background-color: #559c823a;">
+                        <h3>{{ user.username }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="author">
+                            {% if profile.avatar %}
+                            <img src="{{ profile.avatar.url }}" alt="avatar" style="width:200px; height: 200px; border-radius: 50%;">
+                            {% else %}
+                            <img src="//www.bing.com/images/blob?bcid=REYHJ5-s4cEHkglCDcSf0unok9Su.....zo"
+                                alt="avatar" style="margin-top: 20px; width:200px; height: 200px; border-radius: 50%;">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-12 panel-left">
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>История профиля</h4>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-th-block">
+                            <tbody>
+                                <tr>
+                                    <td class="active" style="background-color: #559c823a">Имя пользователя:</td>
+                                    <td style="background-color: #559c823a;">{{ profile.user }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="active" style="background-color: #559c823a">Электронная почта:</td>
+                                    <td style="background-color: #559c823a;">{{ user.email }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="active" style="background-color: #559c823a;">Роль:</td>
+                                    <td style="background-color: #559c823a;">{{ profile.get_role_display }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="active" style="background-color: #559c823a;">Номер телефона:</td>
+                                    <td style="background-color: #559c823a;">{{ profile.phone }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="active" style="background-color: #559c823a;">Дополнительная информация:</td>
+                                    <td style="background-color: #559c823a;">{{ profile.extra_info }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

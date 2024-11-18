@@ -1,0 +1,24 @@
+{% extends "services/base.html" %}
+
+{% block title %}Вход в систему{% endblock %}
+
+{% block content %}
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <div class="card" style="border: 2px solid #12864cb9; padding: 10px; border-radius: 10px; height: auto; width: 500px;">
+        <div class="card-body" style="background-color: rgba(32, 179, 130, 0.363);">
+            <h2 class="card-title text-center">Вход в систему</h2>
+            <br>
+            <form class="text-center" method="post" action="{% url 'registration:login' %}">
+                <p class="form-floating">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <br>
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

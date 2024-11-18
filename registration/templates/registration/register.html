@@ -1,0 +1,36 @@
+{% extends "services/base.html" %}
+
+{% block title %}Регистрация в системе{% endblock %}
+
+{% block content %}
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <div class="card" style="border: 2px solid #128618b9; padding: 10px; border-radius: 10px; height: auto; width: auto;">
+        <div class="card-body" style="background-color: rgba(37, 179, 32, 0.363);">
+            <h2 class="card-title text-center">Регистрация в системе</h2>
+            <br>
+                <form class="text-center" method="post" action="{% url 'registration:register' %}">
+                <p class="form-floating">
+                    {% csrf_token %}
+                    <div class="form-container">
+                        <div>
+                            <h3>Регистрация</h3>
+                            <br>
+                            {{ register_form.as_p }}
+                            <br>
+                            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                        </div>
+                        <div>
+                            <h3>Профиль</h3>
+                            <br>
+                            {{ profile_form.as_p }}
+                        </div>
+                    </div>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
