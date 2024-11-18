@@ -1,0 +1,30 @@
+{% extends "services/base.html" %}
+
+{% block title %}Создать клиента{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+{% if user.profile.get_role_display == "Сотрудник коммерческой службы" %}
+
+
+<div class="container_body" style="width: auto; height: auto;">
+    <h2>Создание клиента</h2>
+    <hr>
+    <form class="text-center" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <hr>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+
+{% else %}
+    <div class="container_body">
+        <h1 class="text-center text-danger">Доступ закрыт</h1>
+        <p style="font-size: 20px;">У Вас нет прав доступа к <u>информации о клиентах завода – потребителях лесопродукции</u>, т.к. Вы не являетесь сотрудником этого предприятия</p>
+    </div>
+{% endif %}
+
+{% endblock %}
