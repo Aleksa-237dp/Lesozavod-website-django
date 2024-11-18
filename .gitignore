@@ -1,4 +1,5 @@
 __pycache__/
+__init__.py
 .venv
 db.db
 migrations/*.pyc
