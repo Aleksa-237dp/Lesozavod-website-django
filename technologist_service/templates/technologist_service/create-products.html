@@ -1,0 +1,29 @@
+{% extends "services/base.html" %}
+
+{% block title %} Создать лесопродукцию {% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+{% if user.profile.get_role_display == "Сотрудник коммерческой службы" or user.profile.get_role_display == "Сотрудник службы производства" or user.profile.get_role_display == "Сотрудник службы технолога" %}
+
+<div class="container_body" style="width: auto; height: auto;">
+    <h2>Создание вида лесопродукции</h2>
+    <hr>
+    <form class="text-center" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <hr>
+        <button type="submit" class="btn btn-primary" href={% url "technologist_service:products" %}>Отправить</button>
+    </form>
+</div>
+
+{% else %}
+    <div class="container_body">
+        <h1 class="text-center text-danger">Доступ закрыт</h1>
+        <p style="font-size: 20px;">У Вас нет прав доступа к <u>информации о видах лесопродукции</u>, т.к. Вы не являетесь сотрудником этого предприятия</p>
+    </div>
+{% endif %}
+
+{% endblock %}
