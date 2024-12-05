@@ -8,7 +8,7 @@ $$\normalsize{\textsf{\color{orange}Web application created in Python using the 
 $\normalsize{\textsf{\color{violet}2 stages "Automation of business processes" of the NTO Olympiad (National Technology Olympiad) 2024-2025}}$
 
 ### Condition
-Sawmill “Lesozavod No. 10 Belka” is divided into several services of the enterprise. 
+Sawmill “Lesozavod № 10 Belka” is divided into several services of the enterprise. 
 The main services are commercial service, production service, and technologist service.
 
 The main departments are the commercial department, the production department, and the technologist department.
