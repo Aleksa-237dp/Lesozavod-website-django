@@ -1,5 +1,8 @@
 # Lesozavod-website-django 🐍
 
+[![](https://img.shields.io/badge/github(django)-blueviolet?style=for-the-badge)]([https://github.com/Aleksa-237dp](https://github.com/django))
+[![](https://img.shields.io/badge/book(django)-green?style=for-the-badge)](https://www.djangoproject.com/)
+
 $$\normalsize{\textsf{\color{orange}Web application created in Python using the Django framework}}$$
 
 $\normalsize{\textsf{\color{violet}2 stages "Automation of business processes" of the NTO Olympiad (National Technology Olympiad) 2024-2025}}$
