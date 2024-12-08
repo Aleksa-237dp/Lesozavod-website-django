@@ -19,6 +19,8 @@ The main departments are the commercial department, the production department, a
 
 - The <ins>technologist service</ins> controls the condition of production lines and machines. Required to develop an application for automation of the sawmill, to realize the possibility of registration of orders for timber products from customers by employees of the commercial service
 
+<img src="https://i.ibb.co/r4Fy7N1/2024-11-14-223238.png" width="650" height="500">
+
 ### Staging:
 
 1. Create an application to manage a sawmill. Divide it into sections for 
