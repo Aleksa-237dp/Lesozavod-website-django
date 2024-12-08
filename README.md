@@ -8,7 +8,7 @@
 $\normalsize{\textsf{\color{violet}2 stages "Automation of business processes" of the NTO Olympiad (National Technology Olympiad) 2024-2025}}$
 
 ### Condition
-Sawmill “Lesozavod №10 Belka” is divided into several services of the enterprise. 
+Sawmill "Lesozavod №10 Belka" is divided into several services of the enterprise. 
 The main services are commercial service, production service, and technologist service.
 
 The main departments are the commercial department, the production department, and the technologist department.
@@ -45,25 +45,25 @@ information:
     * Type of forest products required by the customer,
     * Quantity of forest products (for convenience we measure in pieces),
     * Additional information about the order (arbitrary text description),
-    * Status of the order (“Draft”, “Approved by the customer”, “Accepted for production”, and
-“Fulfilled")
+    * Status of the order ("Draft", "Approved by the customer", "Accepted for production", and
+"Fulfilled")
 
     When registering an order from a customer, it is necessary to check its completion: an order in the status of 
-“Approved by the customer” can be registered only if it contains information about the customer, type of forest products and quantity of forest products ordered. 
+"Approved by the customer" can be registered only if it contains information about the customer, type of forest products and quantity of forest products ordered. 
 customer, type of timber products and quantity of timber products to be ordered. By default 
-Forest products order is created with “Draft” status
+Forest products order is created with "Draft" status
 
 5. In the customer's list of orders for forest products, it is necessary to make color selections based on 
 depending on the conditions:
-    * An order in the “Draft” status has no color highlighting,
-    * An order in the status “Approved by the customer” has orange color highlighting,
-    * An order in the status “Accepted for production” has yellow color highlighting,
-    * Order in the status “Fulfilled” has green color highlighting.
+    * An order in the "Draft" status has no color highlighting,
+    * An order in the status "Approved by the customer" has orange color highlighting,
+    * An order in the status "Accepted for production" has yellow color highlighting,
+    * Order in the status "Fulfilled" has green color highlighting.
 
 Filling with test data:
 * Enter 6 types of forest products from the Legend.
 * Enter at least 2 clients of the Timber plant.
-* Enter 3 orders with the status “Approved by the client” with types of timber products:
+* Enter 3 orders with the status "Approved by the client" with types of timber products:
     <p>i. Raw lumber.</p>
     <p>ii. Dry lumber.</p>
     <p>iii. Laths</p>
@@ -72,7 +72,7 @@ Filling with test data:
 
 | Download the repository |
 
-* In the repository you selected, click the green ‘Code’ button and copy the URL.
+* In the repository you selected, click the green 'Code' button and copy the URL.
 * Then, in Visual Studio Code (or other code editor), open a terminal and type the command:
   
 ```python
@@ -85,7 +85,7 @@ Filling with test data:
 * Create a virtual environment using the command:
   
 ```python
-  python -m venv env (replace ‘env’ with the desired environment name)
+  python -m venv env (replace 'env' with the desired environment name)
 ```
 
 * Activate the virtual environment in Windows: `env\Scripts\activate`
