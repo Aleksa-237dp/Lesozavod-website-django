@@ -5,7 +5,7 @@
 
 ### $$\normalsize{\textsf{\color{orange}Web application created in Python using the Django framework}}$$
 
-$\normalsize{\textsf{\color{violet}2 stages "Automation of business processes" of the NTO Olympiad (National Technology Olympiad) 2024-2025}}$
+$\normalsize{\textsf{\color{violet}2 stage "Automation of business processes" of the NTO Olympiad (National Technology Olympiad) 2024-2025}}$
 
 ### Condition
 Sawmill "Lesozavod №10 Belka" is divided into several services of the enterprise. 
